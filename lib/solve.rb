@@ -16,10 +16,7 @@ class Solve
 
     day = klass.new
 
-    p1 = day.part1(input)
-    p2 = day.part2(input)
-
-    Message.puzzle_result(1, p1)
-    Message.puzzle_result(2, p2)
+    Message.puzzle_result(1, day.part1(input))
+    Message.puzzle_result(2, day.part2(input))
   end
 end
