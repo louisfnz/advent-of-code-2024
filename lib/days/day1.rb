@@ -30,7 +30,7 @@ class Day1
     left, right = parse_lists(input)
 
     left.reduce(0) do |total, n|
-      total += n * right.filter { |r| r == n }.count
+      total += n * right.count(n)
     end
   end
 end
