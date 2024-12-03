@@ -22,7 +22,7 @@ class Day1
     left, right = parse_lists(input, true)
 
     left.each_with_index.reduce(0) do |total, (_, i)|
-      total += (left[i] - right[i]).abs
+      total + (left[i] - right[i]).abs
     end
   end
 
@@ -30,7 +30,7 @@ class Day1
     left, right = parse_lists(input)
 
     left.reduce(0) do |total, n|
-      total += n * right.count(n)
+      total + n * right.count(n)
     end
   end
 end

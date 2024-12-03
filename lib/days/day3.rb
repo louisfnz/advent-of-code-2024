@@ -13,8 +13,7 @@ class Day3
     instructions = parse_instructions(1, input)
 
     instructions.reduce(0) do |total, instruction|
-      total += multiply(instruction)
-      total
+      total + multiply(instruction)
     end
   end
 
