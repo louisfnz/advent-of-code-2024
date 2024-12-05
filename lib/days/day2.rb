@@ -6,28 +6,22 @@ class Day2
   end
 
   def check_report(report)
-    safe = true
     type = report[0] < report[1] ? 'asc' : 'desc'
 
     report.each_with_index do |n, i|
       if i > 0
         if type == 'asc' && report[i] <= report[i - 1]
-          safe = false
-          break
+          return false
         elsif type == 'desc' && report[i] >= report[i - 1]
-          safe = false
-          break
+          return false
         else
           diff = (report[i] - report[i - 1]).abs
-          if diff < 1 || diff > 3
-            safe = false
-            break
-          end
+          return false if diff > 3
         end
       end
     end
 
-    safe
+    true
   end
 
   def part1(input)
@@ -40,8 +34,8 @@ class Day2
   end
 
   def part2(input)
-    total = 0
     reports = parse_reports(input)
+    total = 0
 
     reports.each do |report|
       if check_report(report)
