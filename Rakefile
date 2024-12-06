@@ -14,6 +14,32 @@ namespace :solve do
   end
 end
 
+namespace :template do
+  DAY_RANGE.each do |i|
+    number = i.to_s
+    desc "Create template for day #{number}"
+    task number.to_sym do
+      Message.text "Creating template for day #{number}..."
+
+      day_file = File.join(ROOT, 'lib', 'days', "day#{number}.rb")
+      if File.file?(day_file)
+        Message.error "Day#{number} already exists, skipping..."
+      else
+        File.write(day_file, File.read(File.join(ROOT, 'templates', 'Day.txt')).gsub('{number}', number))
+        Message.success "Created Day#{number}!"
+      end
+
+      test_file = File.join(ROOT, 'lib', 'tests', "day#{number}_test.rb")
+      if File.file?(test_file)
+        Message.error "Day#{number}Test already exists, skipping..."
+      else
+        File.write(test_file, File.read(File.join(ROOT, 'templates', 'DayTest.txt')).gsub('{number}', number))
+        Message.success "Created Day#{number}Test!"
+      end
+    end
+  end
+end
+
 namespace :test do
   DAY_RANGE.each do |i|
     number = i.to_s

@@ -1,0 +1,13 @@
+class Day{number}
+  def parse_input(input)
+    input.split("\n")
+  end
+
+  def part1(input)
+    lines = parse_input(input)
+  end
+
+  def part2(input)
+    lines = parse_input(input)
+  end
+end
