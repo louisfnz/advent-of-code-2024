@@ -17,7 +17,7 @@ end
 namespace :template do
   DAY_RANGE.each do |i|
     number = i.to_s
-    desc "Create template for day #{number}"
+    desc "Create template for day #{number}..."
     task number.to_sym do
       Message.text "Creating template for day #{number}..."
 
