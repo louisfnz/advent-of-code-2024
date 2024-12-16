@@ -4,6 +4,8 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    ffi (1.17.0)
+    ffi (1.17.0-arm64-darwin)
     io-console (0.7.2)
     irb (1.14.1)
       rdoc (>= 4.0.0)
@@ -17,6 +19,8 @@ GEM
     reline (0.5.12)
       io-console (~> 0.5)
     stringio (3.1.2)
+    z3 (0.0.20230311)
+      ffi (~> 1.9)
 
 PLATFORMS
   arm64-darwin-22
@@ -26,6 +30,7 @@ DEPENDENCIES
   debug (>= 1.0.0)
   rainbow
   rake
+  z3
 
 BUNDLED WITH
    2.5.14

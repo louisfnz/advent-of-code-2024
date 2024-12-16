@@ -5,6 +5,7 @@ ROOT = __dir__
 require "bundler/setup"
 require "debug"
 require "rainbow"
+require "z3"
 
 require "./lib/solve"
 require "./lib/test"
